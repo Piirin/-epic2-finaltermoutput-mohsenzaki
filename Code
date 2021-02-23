@@ -1,0 +1,78 @@
+const MANDALA_LIMIT = 400 //Outer Circle
+const BUBBLES = 10
+
+function setup() {
+  createCanvas(500, 500);
+  angleMode(DEGREES)
+  ellipseMode(CENTER);
+}
+
+function draw() {
+  background('orange');
+  noFill()
+  stroke(0)
+  push()
+    strokeWeight(9);
+    translate(width/2 , height/2)
+    ellipse(0, 0, MANDALA_LIMIT, MANDALA_LIMIT); 
+  pop()
+  push()
+      strokeWeight(3);
+     translate(width/2 , height/2)
+      ellipse (0, 0, MANDALA_LIMIT, 70)
+      ellipse (0, 0, 70, MANDALA_LIMIT)
+    for (let i = 0; i < BUBBLES; i++) {
+    line (0, 0, 0, MANDALA_LIMIT / 2)
+    rotate(360 / BUBBLES)
+    }
+ 
+        fill('red');
+  ellipse (0, 0, 70, 70)
+      noFill()
+      ellipse (0, 0, 90, 90)
+      
+      ellipse (0, 0, 200, 200)
+      ellipse (0, 0, 220, 220)
+     
+      ellipse (0, 0, 300, 300)
+      ellipse (0, 0, 330, 330)
+  
+    fill('black');
+    rect (70, 70, 70, 70)
+    fill('red');
+  ellipse (90, 90, 70, 70)
+       
+  pop()
+  push()
+  strokeWeight(3);
+     translate(width/2 , height/2)
+    fill('black');
+    rect (-70, -70, -70, -70)
+    fill('red');
+    ellipse (-90, -90, -70, -70)
+  
+
+
+  pop()
+  
+  push()
+  strokeWeight(3);
+     translate(width/2 , height/2)
+    fill('black');
+    rect (-70, 130, -70, -70)
+    fill('red');
+    ellipse (-90, 80, -70, -70)
+  pop()
+  
+    push()
+  strokeWeight(3);
+     translate(width/2 , height/2)
+    fill('black');
+    rect (70, -130, 70, 70)
+    fill('red');
+    ellipse (90, -80, 70, 70)
+  
+  pop()
+  
+
+}
